@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: rgb(47, 59, 63);
+  overflow: hidden;
+}
+.carousel_wrapper {
+  max-width: 1200px;
+  font-family: poppins, sans-serif;
+  position: relative;
+}
+.carousel_wrapper i {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fffffffd;
+  font-size: 2rem;
+  border-radius: 2px;
+  color: rgb(0, 0, 0);
+  padding: 1rem 0.5rem;
+  line-height: 40px;
+  z-index: 10;
+}
+.carousel_wrapper i:first-child {
+  left: -23px;
+  display: none;
+}
+.carousel_wrapper i:last-child {
+  right: -23px;
+}
+.carousel {
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+}
+.carousel.dragging {
+  cursor: grab;
+  scroll-behavior: auto;
+}
+.carousel.dragging img {
+  pointer-events: none;
+}
+.carousel img {
+  width: calc(100% / 3);
+  height: 350px;
+  margin-left: 14px;
+  object-fit: cover;
+}
+.carousel img:first-child {
+  margin-left: 0px;
+}
+@media screen and (max-width: 900px) {
+  .carousel img {
+    width: calc(100% / 2);
+  }
+}
+@media screen and (max-width: 500px) {
+  .carousel img {
+    width: calc(100%);
+  }
+}
